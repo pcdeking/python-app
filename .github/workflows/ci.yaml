@@ -21,7 +21,7 @@ jobs:
             docker build -t pcdeking/python-app:${{ env.SHORT_SHA }} .
 
         - name: loging to docker hub
-          run: \
+          run: |
             echo "${{ secrets,DOCKER_HUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} - -password-stdin
 
         - name: push docker image to docker hub
