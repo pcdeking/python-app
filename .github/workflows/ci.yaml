@@ -1,0 +1,22 @@
+name:  python project pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_push:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: checkout code
+          uses: actions/checkout@v4
+        - name: Set Short SHA
+          run: |
+            echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+
+        - name: Bulid docker image
+          run: |
+            docker build -t 
+
