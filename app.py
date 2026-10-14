@@ -1,3 +1,5 @@
+#Python app to display the current time
+
 from flask import Flask
 import time
 
